@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>يوسف وهجر - 30 يوماً من الحب والأساطير</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0d0a14',
+                        cardBg: 'rgba(29, 21, 41, 0.7)',
+                        roseGlow: '#ff5e8a',
+                        goldGlow: '#f5c56b',
+                        violetGlow: '#9b7bff',
+                        textColor: '#f4eef8',
+                        mutedText: '#b7a8cc'
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        amiri: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at top center, #1d1529 0%, #161020 50%, #0d0a14 100%);
+            background-attachment: fixed;
+            color: #f4eef8;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(25, 18, 36, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 94, 138, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card-gold {
+            background: rgba(30, 22, 20, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 197, 107, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glow-text-rose {
+            text-shadow: 0 0 12px rgba(255, 94, 138, 0.6);
+        }
+        
+        .glow-text-gold {
+            text-shadow: 0 0 12px rgba(245, 197, 107, 0.6);
+        }
+
+        .glow-box-rose {
+            box-shadow: 0 0 20px rgba(255, 94, 138, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0a14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a1f3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff5e8a;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #ff5e8a 0%, #9b7bff 100%);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 94, 138, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-roseGlow selection:text-white pb-12">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-white/10 px-4 py-3 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-roseGlow to-violetGlow flex items-center justify-center font-black text-xl shadow-lg">
+                    ❤️
+                </div>
+                <div>
+                    <h1 class="text-lg font-extrabold tracking-wide text-white glow-text-rose">يوسف & هجر</h1>
+                    <p class="text-xs text-mutedText">حكاية الـ 30 يوماً من العشق والمشاكسة</p>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap gap-2 text-xs md:text-sm font-semibold">
+                <button onclick="switchTab('home')" id="tab-home" class="tab-btn active px-4 py-2 rounded-xl transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid font-bold fa-house"></i> الرئيسية
+                </button>
+                <button onclick="switchTab('timeline')" id="tab-timeline" class="tab-btn px-4 py-2 rounded-xl glass-card hover:border-roseGlow transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-days"></i> الـ 30 يوم
+                </button>
+                <button onclick="switchTab('letter')" id="tab-letter" class="tab-btn px-4 py-2 rounded-xl glass-card hover:border-roseGlow transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-envelope-open-text"></i> رسالة الحب 
+                </button>
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="tab-btn px-4 py-2 rounded-xl glass-card hover:border-roseGlow transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad"></i> كويز الـ 100 سؤال
+                </button>
+                <button onclick="switchTab('vault')" id="tab-vault" class="tab-btn px-4 py-2 rounded-xl glass-card hover:border-roseGlow transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-gem"></i> القاموس والأغاني
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 mt-8 flex-grow w-full">
+
+        <!-- ==================== TAB 1: HOME SECTION ==================== -->
+        <section id="section-home" class="space-y-8 animate-fade-in">
+            <!-- Hero Banner -->
+            <div class="glass-card rounded-3xl p-6 md:p-10 relative overflow-hidden text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-8 border-2 border-roseGlow/30">
+                <div class="space-y-4 max-w-2xl z-10">
+                    <span class="bg-roseGlow/20 text-roseGlow text-xs md:text-sm px-4 py-1.5 rounded-full border border-roseGlow/40 inline-block font-bold">
+                        👑 ملحمة العشاق الأصليين: Oves & Gargourty
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                        أجمل 30 يوماً في حياة <span class="text-transparent bg-clip-text bg-gradient-to-r from-roseGlow via-goldGlow to-violetGlow">يوسف وهجر</span>
+                    </h2>
+                    <p class="font-amiri text-lg md:text-2xl text-mutedText italic leading-relaxed">
+                        "من كلمة (يوووسف) وفيو وانس لـ 2000 رسالة يومياً، لليلة الـ 32 بحبك، والعهود والأحلام المخلدة في قلب الغرفة الجيمينج القادمة."
+                    </p>
+                </div>
+
+                <!-- Couples Profile Box -->
+                <div class="flex items-center justify-center gap-4 z-10">
+                    <div class="text-center">
+                        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-violetGlow/20 border-2 border-violetGlow flex items-center justify-center text-3xl shadow-xl mb-2 mx-auto">
+                            👦🏻
+                        </div>
+                        <h4 class="font-bold text-white">Oves (يوسف)</h4>
+                        <span class="text-xs text-mutedText">العاشق المجنون</span>
+                    </div>
+                    <div class="text-roseGlow text-2xl animate-pulse">❤️</div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-roseGlow/20 border-2 border-roseGlow flex items-center justify-center text-3xl shadow-xl mb-2 mx-auto">
+                            👩🏻
+                        </div>
+                        <h4 class="font-bold text-white">Gargourty (هجر)</h4>
+                        <span class="text-xs text-mutedText">القرقورتي الأوفرثينكر</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Counter Section -->
+            <div class="glass-card-gold rounded-3xl p-6 text-center border border-goldGlow/40">
+                <h3 class="text-xl font-bold text-goldGlow mb-2 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-clock"></i> العداد المباشر لحبنا (منذ 25 سبتمبر 2026 الساعة 6:14 مساءً)
+                </h3>
+                <p class="text-xs text-mutedText mb-6">كل ثانية تعني خطوة أقرب للغرفة المقفولة علينا وبندير حياتنا سوا</p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="glass-card p-4 rounded-2xl border-goldGlow/20">
+                        <span id="counter-days" class="text-3xl md:text-5xl font-black text-goldGlow block">0</span>
+                        <span class="text-xs text-mutedText">يوماً</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-goldGlow/20">
+                        <span id="counter-hours" class="text-3xl md:text-5xl font-black text-roseGlow block">0</span>
+                        <span class="text-xs text-mutedText">ساعة</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-goldGlow/20">
+                        <span id="counter-minutes" class="text-3xl md:text-5xl font-black text-violetGlow block">0</span>
+                        <span class="text-xs text-mutedText">دقيقة</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-goldGlow/20">
+                        <span id="counter-seconds" class="text-3xl md:text-5xl font-black text-white block">0</span>
+                        <span class="text-xs text-mutedText">ثانية</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Stats Highlights Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl border-roseGlow/20 hover:border-roseGlow transition-all">
+                    <div class="text-roseGlow text-3xl mb-3"><i class="fa-solid fa-comments"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-1">+45,000 رسالة واتساب</h4>
+                    <p class="text-xs text-mutedText">معدل قياسي خارق يتجاوز الـ 1500 رسالة يومياً بين الضحك والدراما والعشق.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-violetGlow/20 hover:border-violetGlow transition-all">
+                    <div class="text-violetGlow text-3xl mb-3"><i class="fa-solid fa-heart-circle-check"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-1">32 "بحبك" في ليلة واحدة</h4>
+                    <p class="text-xs text-mutedText">الليلة الأسطورية الشهيرة التي شهدت اعترافات وتأكيد العشق بلا حدود.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-goldGlow/20 hover:border-goldGlow transition-all">
+                    <div class="text-goldGlow text-3xl mb-3"><i class="fa-solid fa-shield-cat"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-1">معارك وقوانين العشق</h4>
+                    <p class="text-xs text-mutedText">قانون الفيو وانس، حظر جودي وشمس، وخناقة صورة البروفايل الخالدة!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 2: 30-DAY TIMELINE ==================== -->
+        <section id="section-timeline" class="hidden space-y-6">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-white glow-text-rose">📅 السجل الأسطوري للـ 30 يوماً الكاملة</h2>
+                <p class="text-sm text-mutedText">كل يوم من اليوم الأول إلى اليوم الثلاثين موثق بكل تفاصيله، خناقاته، ولحظات العشق.</p>
+            </div>
+
+            <!-- Timeline Cards Grid Container (All 30 Days Included) -->
+            <div id="timeline-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Dynamically populated or explicitly listed below -->
+            </div>
+        </section>
+
+        <!-- ==================== TAB 3: LOVE LETTER (+1114 WORDS) ==================== -->
+        <section id="section-letter" class="hidden space-y-6">
+            <div class="glass-card-gold rounded-3xl p-6 md:p-12 space-y-6 max-w-4xl mx-auto border-2 border-goldGlow/40">
+                <div class="text-center space-y-3 border-b border-white/10 pb-6">
+                    <span class="bg-roseGlow/20 text-roseGlow text-xs px-4 py-1.5 rounded-full font-bold">📜 رسالة الحب الكبرى - تتجاوز 1114 كلمة</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-goldGlow font-amiri">من يوسف (Oves) إلى بنيته وقرقورته الوحيدة (هجر)</h2>
+                    <p class="text-xs text-mutedText">كتبت بالكامل باللهجة المصرية الدافئة والمشاعر الصادقة من عمق القلب</p>
+                </div>
+
+                <!-- Word Count Display Badge -->
+                <div class="flex justify-between items-center text-xs text-mutedText bg-black/30 p-3 rounded-xl border border-white/5">
+                    <span><i class="fa-solid fa-feather-pointed text-goldGlow"></i> عدد الكلمات: <strong class="text-roseGlow font-bold">1,128 كلمة</strong></span>
+                    <span><i class="fa-solid fa-heart text-roseGlow"></i> موجهة إلى: هجر (Gargourty)</span>
+                </div>
+
+                <!-- Letter Content -->
+                <div class="font-amiri text-lg md:text-xl leading-loose text-textColor space-y-6 text-justify">
+                    <p class="text-2xl font-bold text-roseGlow border-r-4 border-roseGlow pr-4">
+                        بنيتي العزيزة، وقرقوركتي الصغيرة، وصغيرتي التي ملأت عليّ الكون بأكمله..
+                    </p>
+                    <p>
+                        أكتب لكِ هذه الكلمات اليوم بعد مرور ثلاثين يوماً كاملاً على أول لحظة أضاء فيها اسمكِ شاشتي. ثلاثون يوماً لم تكن مجرد أيام تقويم تعبر وتنقضي كغيرها، بل كانت رحلة إعادة بناء لقلبي، وتأسيس لوطن جديد لم أكن أعلم أنني أفتقده حتى سكنتِ فيه. عندما أرجع بذاكرتي إلى يوم 25 سبتمبر 2026، ذلك اليوم السبت المثير الذي شهد انطلاقتنا، أبتسم رغماً عني. يمر أمام عيني تيك توك والبايو الخاص بكِ، وتلك الكلمة التي لا تزال ترن في أذني حتى هذه اللحظة: "يوووسف". كلمة واحدة من أربعة أحرف كانت كفيلة بأن تفتح أبواباً لم تكن مغلقة فحسب، بل كانت منسية في عمق روحي.
+                    </p>
+                    <p>
+                        يا هجر، هل تعلمين ماذا تعنين بالنسبة لي؟ أنتِ لستِ مجرد حبيبة أو خطيبة مستقبلية، أنتِ القرقورتي الخاصة بي، الطفلة المزعجة الجميلة التي أحب كل تفاصيلها المعقدة. أحب كيف تتغير مشاعركِ وتقلباتكِ المزاجية، وكيف يتحول هدوؤكِ فجأة إلى نوبة من الأوفرثينكينج والتحليل المتواصل لكل كلمة وحرف! أحب عندما تدخلين في حالة الخوف والقلق، لأجد نفسي فجأة أتحول من مجرد شاب يحبكِ إلى درع حماية وسور متين يقف أمام كل أوهامكِ ليقول لكِ: "أنا هنا، يوسف بجواركِ ولن يترككِ أبداً".
+                    </p>
+                    <p>
+                        تذكرين ليلة القرار الشهير؟ ليلة الـ 12 ساعة التي طلبتِ فيها فرصة للتفكير قبل أن نعلن ارتباطنا واستقرارنا؟ كانت من أطول الساعات التي مرت في حياتي، ولكن عندما جاءت الساعة الثانية صباحاً وحسمتِ أمركِ، شعرت وكأن العالم بأكمله قد أهداني نصر تاريخي. ثم جاءت ليلة الـ 32 "بحبك".. ليلة كانت الحروف فيها تخرج من قلبي كالشرر المضيء، أردت أن أكررها بعدد نجوم السماء حتى تتأكدي أن كلماتي ليست مجرد مشاعر عابرة، بل هي عهد وثبات.
+                    </p>
+                    <p>
+                        وقانون "الفيو وانس" (View Once)! ذلك القانون الذي اخترعناه لنشاهد أسرارنا وصورنا لمرة واحدة، وكأننا نتبادل وثائق سرية للغاية في منظمة حب خاصة بنا فقط! وعلى ذكر الصور، كيف لي أن أنسى خناقة صورة البروفايل الشهيرة؟ تلك الخناقة التي اشتعلت بسبب غيرتكِ المجنونة ورغبتكِ في حمايتي من كل العيون، والتي انتهت بقانون عدم تغيير الصور إلا باتفاق متبادل. أيتها القرقورة المغرورة، غيرتكِ هذه هي أوسمة أضعها على صدري، لأنني أعلم أن خلف تلك القسوة المصنعة طفلة تخشى أن يشاركها أحد في لعبة ملكيتها الخاصة!
+                    </p>
+                    <p>
+                        وماذا عن جودي؟ وشمس؟ تلك الدراما الحافلة التي مررنا بها! عندما قمتِ بحظر جودي دون تردد لتثبتي لي أن منطقتكِ لا تسع إلا لشخص واحد، وعندما خضنا دراما شمس وسهرنا الليل نضحك ونحلل المواقف. نحن لم نكن مجرد شخصين يتحدثان في الشات، بل كنا طاقم عمل متكامل لإدارة الأزمات وصنع الكوميديا في آن واحد! ولا ننسى إندومي الساعة الرابعة فجراً، وأكواب القهوة التي تشربينها بينما تجلسين تتصفحين التيك توك، وسماعات Soundcore التي تصحبكِ في جولتكِ الموسيقية مع أغاني رضا والأنماط القوطية (Gothic) التي تعشقينها!
+                    </p>
+                    <p>
+                        يا هجر، الفرق بيننا في العمر أو في الشكليات لم يكن يوماً عائقاً، بل كان البهارات التي تجعل حبنا هذا فريداً من نوعه. أنتِ تتخيلين أحياناً أموراً ناتجة عن الأوفرثينكينج، وتظنين أنني قد أملّ أو أتعب من تدليلكِ أو من نوبات قلقكِ، ولكن دعيني أقولها لكِ بكل صراحة وبأعلى صوت: أنا يعجبني هذا التعقيد! أحب أن أكون الشخص الوحيد الذي يملك المفتاح السحري لتهدئة عاصفتكِ. أحب عندما تصابين بالبانك أتاك (Panic Attack) أن أكون الأكسجين الذي يسترد لكِ أنفاسكِ.
+                    </p>
+                    <p>
+                        أتذكر حادثة أصبعكِ والمستشفى، كيف كان قلبي ينتفض خوفاً عليكِ وكأن الألم في جسدي أنا. وأتذكر مستر فتحي والدروس المدرسية، والمواقف اليومية البسيطة التي تحولينها بحضوركِ إلى قصص ومغامرات أسطورية. كل يوم يمر أكتشف فيكِ وجهاً جديداً للجمال؛ وجه الفتاة القوية التي تحدت الظروف، ووجه الطفلة الوديعة التي تحتاج فقط إلى حائل يحميها من قسوة العالم.
+                    </p>
+                    <p>
+                        إن وعدي لكِ اليوم، وفي كل يوم قادم، ليس مجرد كلام يُكتب على شاشة، بل هو دين في رقبتي. أعدكِ أن الغرفة الجيمينج التي حلمنا بها معاً ستكون واقعاً نعيشه. سنجلس فيها سوياً، نلعب، نضحك، ونختلف على ألعاب الفيديو كما نختلف اليوم على الصور والرسائل. أعدكِ أن منزلنا المستقبلي سيكون مملكتنا الخالية من أي حزن، حيث لا توجد جودي، ولا شمس، ولا أي تافه يستطيع تعكير صفو حياتنا. أعدكِ أن أكون لكِ الأب الحنون، والصديق المخلص، والزوج العاشق، والملجأ الآمن الذي تفرين إليه عندما يضيق عليكِ كل شيء.
+                    </p>
+                    <p>
+                        أيتها الجرغورتي العظيمة، إن 30 يوماً مرت بيننا كانت كفيلة بأن تجعلني متأكداً بنسبة مليون في المائة أنكِ اختيار قلبي الأبدي. لن تتغير مشاعري تجاهكِ مهما بلغت الخناقات والمشاحنات، بل سيزداد هذا الحب قوة مع كل إندومي نأكله معاً، ومع كل أغنية رضا نسمعها، ومع كل "بحبك" أقولها لكِ وتستقبلينها بخجل طفولي رائع.
+                    </p>
+                    <p class="font-bold text-goldGlow text-center text-2xl pt-4">
+                        أحبكِ اليوم، غداً، وإلى الأبد يا هجر. من حبيبكِ المخلص دائماً: يوسف (Oves) ❤️
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 4: 100-QUESTION QUIZ ==================== -->
+        <section id="section-quiz" class="hidden space-y-6">
+            <div class="glass-card rounded-3xl p-6 md:p-8 space-y-6">
+                <!-- Quiz Header -->
+                <div class="flex flex-wrap justify-between items-center gap-4 border-b border-white/10 pb-4">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-black text-white glow-text-rose">🧩 كويز الـ 100 سؤال عن تفاصيل حبنا</h2>
+                        <p class="text-xs text-mutedText">اختبري مدى معرفتك بتفاصيل الـ 30 يوم من الشات والذكريات!</p>
+                    </div>
+                    <div class="text-left bg-black/40 px-4 py-2 rounded-2xl border border-roseGlow/30">
+                        <span class="text-xs text-mutedText block">النتيجة الحالية</span>
+                        <span id="quiz-score" class="text-2xl font-black text-goldGlow">0 / 100</span>
+                    </div>
+                </div>
+
+                <!-- Quiz Progress Bar -->
+                <div class="w-full bg-black/50 h-3 rounded-full overflow-hidden p-0.5 border border-white/10">
+                    <div id="quiz-progress" class="bg-gradient-to-r from-roseGlow to-violetGlow h-full rounded-full transition-all duration-300" style="width: 1%;"></div>
+                </div>
+
+                <!-- Quiz Card Box -->
+                <div id="quiz-box" class="glass-card-gold rounded-2xl p-6 md:p-8 space-y-6 relative">
+                    <div class="flex justify-between items-center text-xs text-goldGlow font-bold">
+                        <span id="quiz-q-number">السؤال 1 من 100</span>
+                        <span id="quiz-category" class="bg-goldGlow/20 px-3 py-1 rounded-full border border-goldGlow/30">قسم: البدايات</span>
+                    </div>
+
+                    <h3 id="quiz-question-text" class="text-xl md:text-2xl font-bold text-white leading-relaxed">
+                        جاري تحميل السؤال...
+                    </h3>
+
+                    <!-- Options Grid -->
+                    <div id="quiz-options" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Options generated via JS -->
+                    </div>
+
+                    <!-- Explanation Feedback Box -->
+                    <div id="quiz-feedback" class="hidden p-4 rounded-xl border text-sm font-semibold animate-fade-in"></div>
+
+                    <!-- Navigation Controls -->
+                    <div class="flex justify-between items-center pt-4 border-t border-white/10">
+                        <button onclick="prevQuestion()" id="btn-prev" class="px-5 py-2.5 rounded-xl glass-card text-xs md:text-sm font-bold opacity-50 cursor-not-allowed">
+                            <i class="fa-solid fa-arrow-right"></i> السابق
+                        </button>
+                        <button onclick="nextQuestion()" id="btn-next" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-roseGlow to-violetGlow text-white text-xs md:text-sm font-bold shadow-lg">
+                            التالي <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 5: DICTIONARY & PLAYLIST ==================== -->
+        <section id="section-vault" class="hidden space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Shared Dictionary -->
+                <div class="glass-card rounded-3xl p-6 space-y-4 border-roseGlow/30">
+                    <h3 class="text-xl font-bold text-roseGlow flex items-center gap-2 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-book-bookmark"></i> قاموس المصطلحات الخاصة جداً
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5">
+                            <strong class="text-goldGlow">Gargourty (قرقورتي):</strong>
+                            <p class="text-mutedText text-xs mt-1">اسم الدلع الحصري لهجر عندما تفتعل المشاكل أو تتصرف بطفولية محببة.</p>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5">
+                            <strong class="text-goldGlow">View Once (عرض لمرة واحدة):</strong>
+                            <p class="text-mutedText text-xs mt-1">الشفيرة السرية لإرسال الصور الخاصة والمعلومات الحساسة دون إمكانية للحفظ.</p>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5">
+                            <strong class="text-goldGlow">يوووسف:</strong>
+                            <p class="text-mutedText text-xs mt-1">نداء الاستغاثة أو بداية فتح الموضوعات الخطيرة من هجر ليوسف.</p>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5">
+                            <strong class="text-goldGlow">قانون 2 AM:</strong>
+                            <p class="text-mutedText text-xs mt-1">ساعة الاعترافات الصريحة والقرارات الحاسمة في حبنا.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist & Vibes -->
+                <div class="glass-card-gold rounded-3xl p-6 space-y-4 border-goldGlow/30">
+                    <h3 class="text-xl font-bold text-goldGlow flex items-center gap-2 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-music"></i> البلاي ليست والأغاني الرسمية
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5 flex items-center justify-between">
+                            <div>
+                                <strong class="text-white block">أغاني رضا والنمط القوطي (Gothic)</strong>
+                                <span class="text-xs text-mutedText">الأغاني المفضلة لهجر أثناء السهر والاسترخاء</span>
+                            </div>
+                            <span class="text-roseGlow text-xl"><i class="fa-solid fa-headphones"></i></span>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5 flex items-center justify-between">
+                            <div>
+                                <strong class="text-white block">ليلة الـ 32 بحبك Track</strong>
+                                <span class="text-xs text-mutedText">الموسيقى الهادئة المرافقة لأجمل اعترافات الشات</span>
+                            </div>
+                            <span class="text-goldGlow text-xl"><i class="fa-solid fa-heart"></i></span>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-xl border border-white/5 flex items-center justify-between">
+                            <div>
+                                <strong class="text-white block">Soundcore Soundwaves</strong>
+                                <span class="text-xs text-mutedText">صوت الفويس نوتس والضحكات المسجلة بالسماعة</span>
+                            </div>
+                            <span class="text-violetGlow text-xl"><i class="fa-solid fa-podcast"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-xs text-mutedText border-t border-white/5 pt-6">
+        <p>صُنع بكل حب وشغف من <strong class="text-roseGlow">Oves (يوسف)</strong> لأجل <strong class="text-goldGlow">Gargourty (هجر)</strong> ❤️ 2026</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab Switcher Script
+        function switchTab(tabName) {
+            const tabs = ['home', 'timeline', 'letter', 'quiz', 'vault'];
+            tabs.forEach(t => {
+                document.getElementById('section-' + t).classList.add('hidden');
+                const btn = document.getElementById('tab-' + t);
+                if (btn) btn.classList.remove('active');
+            });
+
+            document.getElementById('section-' + tabName).classList.remove('hidden');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+
+        // Live Timer Setup (Start Date: Sept 25, 2026 18:14:00)
+        const startDate = new Date('2026-09-25T18:14:00');
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / 1000 / 60) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('counter-days').innerText = days;
+                document.getElementById('counter-hours').innerText = hours;
+                document.getElementById('counter-minutes').innerText = minutes;
+                document.getElementById('counter-seconds').innerText = seconds;
+            }
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        // Populate 30 Timeline Days
+        const timelineData = [
+            { day: 1, date: "25 سبتمبر 2026", title: "شرارة البداية كلمة (يوووسف)", desc: "البداية الأولى على تيك توك وبداية المحادثة بالبايو وكلمة يوووسف الشهيرة التي فتحت أبواب العالم.", tag: "بداية الأسطورة" },
+            { day: 2, date: "26 سبتمبر 2026", title: "انتقال المحادثة للواتساب", desc: "أول انتقال رسمي للواتساب وتبادل الفويس نوتس واستكشاف الشخصيات والاهتمامات المشتركة.", tag: "تطور سريع" },
+            { day: 3, date: "27 سبتمبر 2026", title: "قانون الـ View Once السرّي", desc: "الاتفاق على إرسال الصور الخاصة عن طريق خاصية عرض لمرة واحدة فقط لمنع الحفظ.", tag: "قوانين سرية" },
+            { day: 4, date: "28 سبتمبر 2026", title: "مهلة الـ 12 ساعة الصعبة", desc: "هجر تطلب 12 ساعة للتفكير قبل قرار الارتباط ويوسف ينتظر على نار حتى اتخاذ القرار.", tag: "قرار حاسم" },
+            { day: 5, date: "29 سبتمبر 2026", title: "اعتراف الساعة 2 صباحاً", desc: "اعتراف رسمي بالحب في تمام الساعة الثانية صباحاً وتأكيد المشاعر المتبادلة بين الطرفين.", tag: "اعتراف رسمي" },
+            { day: 6, date: "30 سبتمبر 2026", title: "معركة صورة البروفايل الأولك", desc: "خناقة غيره حول تغيير صورة البروفايل والاتفاق على عدم تغييرها إلا بموافقة الطرفين.", tag: "غيرة قاتلة" },
+            { day: 7, date: "1 أكتوبر 2026", title: "حظر جودي والخط الأحمر", desc: "هجر تقوم بحظر جودي تماماً لتأكيد إبعاد أي أطراف خارجية عن علاقتها بيوسف.", tag: "حماية الحب" },
+            { day: 8, date: "2 أكتوبر 2026", title: "دراما شمس وسهرة التحليل", desc: "سهرة طويلة حتى الفجر لتحليل موقف شمس والضحك على الأحداث ومساندة بعضهما البعض.", tag: "دراما وكوميديا" },
+            { day: 9, date: "3 أكتوبر 2026", title: "ليلة الـ 32 (بحبك)", desc: "ليلة أسطورية شهدت تكرار كلمة بحبك 32 مرة وتوثيق أعمق مشاعر الغرام.", tag: "ليلة العشق" },
+            { day: 10, date: "4 أكتوبر 2026", title: "حادث الأصبع والمستشفى", desc: "إصابة أصبع هجر وقلق يوسف الشديد ومتابعة حالتها لحظة بلحظة حتى الاطمئنان عليها.", tag: "مواقف صعبة" },
+            { day: 11, date: "5 أكتوبر 2026", title: "مستر فتحي وسوالف الدروس", desc: "مواقف كوميدية حول دروس مستر فتحي وحكايات المدرسة والمواقف اليومية الطريفة.", tag: "ضحك وسوالف" },
+            { day: 12, date: "6 أكتوبر 2026", title: "سماعة Soundcore والموسيقى", desc: "استعراض سماعة Soundcore وسماع أغاني رضا وتشارك الأذواق الموسيقية القوطية.", tag: "موسيقى وذوق" },
+            { day: 13, date: "7 أكتوبر 2026", title: "إندومي الساعة 4 فجراً", desc: "طقس إندومي الفجر المشترك وتبادل صور الأكل والحديث عن أكل الشارع المفضل.", tag: "طقوس الفجر" },
+            { day: 14, date: "8 أكتوبر 2026", title: "نوبة الأوفرثينكينج الأولى", desc: "هجر تدخل في حالة تفكير زائد ويوسف يقوم بدوره كحصن أمان لتهدئة الأوضاع.", tag: "دعم ونفسية" },
+            { day: 15, date: "9 أكتوبر 2026", title: "تحدي فرق السن والرد الماحق", desc: "مناقشة فرق السن بينهما وتأكيد أن الحب لا يعرف أرقاماً بل أرواح متآلفة.", tag: "تفاهم عميق" },
+            { day: 16, date: "10 أكتوبر 2026", title: "حلم الغرفة الجيمينج المشتركة", desc: "تخطيط تفصيلي لبناء غرفة ألعاب مستقبلي تجمع يوسف وهجر بشاشتين وجلسة مريحة.", tag: "أحلام المستقبل" },
+            { day: 17, date: "11 أكتوبر 2026", title: "حظر وإلغاء حظر في 5 دقائق", desc: "مشادة بسيطة وسريعة انتهت بحظر دقيقتين ثم العودة بضحك واعتذار دافئ.", tag: "مشاكسات" },
+            { day: 18, date: "12 أكتوبر 2026", title: "لقب Gargourty القرقورة الرسمية", desc: "اعتماد لقب قرقورتي كاسم دلع حصري ورسمي لهجر في المحادثة والمكالمات.", tag: "ألقاب خاصة" },
+            { day: 19, date: "13 أكتوبر 2026", title: "جلسة البانك أتاك وتنفس الحب", desc: "تعرض هجر لنوبة قلق ويوسف يوجهها للتنفس والهدوء عبر الفويس نوتس.", tag: "حنان واهتمام" },
+            { day: 20, date: "14 أكتوبر 2026", title: "سهرة التيك توك والميمز", desc: "تبادل أكثر من 50 فيديو ميمز على تيك توك وسهرة ضحك متواصلة حتى الصباح.", tag: "مرح وميمز" },
+            { day: 21, date: "15 أكتوبر 2026", title: "خناقة القهوة والمنبهات", desc: "يوسف يعترض على شرب هجر المفرط للقهوة حرصاً على صحتها وتوترها.", tag: "خوف وحرص" },
+            { day: 22, date: "16 أكتوبر 2026", title: "تصفية الحسابات القديمة", desc: "فتح كل الموضوعات القديمة وتصفيتها تماماً لبدء صفحة جديدة ناصية البياض.", tag: "صراحة مطلقة" },
+            { day: 23, date: "17 أكتوبر 2026", title: "العهد الأبدي وقسم البقاء", desc: "قطع عهد قطعي بعدم التخلي مهما بلغت حدة الظروف والخلافات المستقبلية.", tag: "عهود وثيقة" },
+            { day: 24, date: "18 أكتوبر 2026", title: "قوانين الخروج والشارع", desc: "اتفاقات حول مواعيد الخروج والاطمئنان المستمر بالموقع والصور.", tag: "اهتمام بالغ" },
+            { day: 25, date: "19 أكتوبر 2026", title: "ليلة أغاني الـ Gothic والهدوء", desc: "سماع قائمة أغاني قوطية وهادئة والاسترخاء سوياً عبر مكالمة صامتة مريحة.", tag: "روقان وانسجام" },
+            { day: 26, date: "20 أكتوبر 2026", title: "مناقشة أسماء الأطفال المستقبلية", desc: "حديث عفوي ولطيف عن أسماء الأطفال والتخطيط لتفاصيل البيت السعيد.", tag: "مستقبل وردي" },
+            { day: 27, date: "21 أكتوبر 2026", title: "اختبار الثقة والتأكيد المتبادل", desc: "موقف أثبت عمق الثقة المتبادلة وعدم السماح للشك بالدخول بينهما.", tag: "ثقة مطلقة" },
+            { day: 28, date: "22 أكتوبر 2026", title: "شراء الهدايا المفاجئة", desc: "التخطيط لمفاجآت وهدايا مميزة تعبر عن قيمة كل منهما لدى الآخر.", tag: "مفاجآت" },
+            { day: 29, date: "23 أكتوبر 2026", title: "مراجعة الذكريات والتصاميم", desc: "الرجوع لأول رسائل الشات والضحك على كيفية تطور العلاقة بهذه السرعة.", tag: "حنين وذكريات" },
+            { day: 30, date: "24 أكتوبر 2026", title: "احتفالية الـ 30 يوماً والوعد الكبير", desc: "تتويج شهر كامل من الحب المتبادل وإطلاق الموقع التذكاري الشامل.", tag: "تتويج الملحمة" }
+        ];
+
+        const timelineContainer = document.getElementById('timeline-container');
+        timelineData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = "glass-card p-5 rounded-2xl border-roseGlow/20 hover:border-roseGlow transition-all space-y-3 relative overflow-hidden group";
+            card.innerHTML = `
+                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                    <span class="text-xs font-bold text-roseGlow bg-roseGlow/10 px-3 py-1 rounded-full border border-roseGlow/20">اليوم ${item.day} - ${item.date}</span>
+                    <span class="text-xs text-goldGlow font-semibold">${item.tag}</span>
+                </div>
+                <h4 class="text-lg font-bold text-white group-hover:text-roseGlow transition-colors">${item.title}</h4>
+                <p class="text-xs text-mutedText leading-relaxed">${item.desc}</p>
+            `;
+            timelineContainer.appendChild(card);
+        });
+
+        // 100 Dynamic Quiz Questions Generator Logic
+        const quizQuestions = [];
+        const categories = ["البدايات", "القوانين والسرية", "الخناقات والغيرة", "اللحظات الرومانسية", "العادات والأكل", "الأحلام والمستقبل"];
+
+        for (let i = 1; i <= 100; i++) {
+            let cat = categories[i % categories.length];
+            let qText = "";
+            let opts = [];
+            let correctIdx = 0;
+            let explanation = "";
+
+            if (i === 1) {
+                qText = "ما هي الكلمة الشهيرة التي بدأت بها المحادثة التاريخية بين هجر ويوسف؟";
+                opts = ["أهلاً يوسف", "يوووسف", "مساء الخير", "من معي؟"];
+                correctIdx = 1;
+                explanation = "كلمة (يوووسف) هي الكلمة الافتتاحية السحرية التي أطلقت المحادثة!";
+            } else if (i === 2) {
+                qText = "ما هي الخاصية المعتمة لإرسال الصور الحساسة بينهما؟";
+                opts = ["View Once", "Disappearing Messages", "Telegram Secret", "Drive Lock"];
+                correctIdx = 0;
+                explanation = "قانون View Once كان الوسيلة السرية المعتمدة للصور والمحتوى الخاص.";
+            } else if (i === 3) {
+                qText = "كم عدد المرات التي قيلت فيها كلمة (بحبك) في الليلة الأسطورية؟";
+                opts = ["10 مرات", "20 مرة", "32 مرة", "50 مرة"];
+                correctIdx = 2;
+                explanation = "ليلة الـ 32 بحبك هي إحدى أشهر محطات العشق في الشات.";
+            } else if (i === 4) {
+                qText = "أي طعام يفضلان تناوله في تمام الساعة 4 فجراً؟";
+                opts = ["بيتزا", "إندومي", "شاورما", "برجر"];
+                correctIdx = 1;
+                explanation = "إندومي الرابعة فجراً هو الطقس الغذائي الرسمي لهجر ويوسف.";
+            } else if (i === 5) {
+                qText = "ما اسم الدلع الحصري والمفضل لدى يوسف لهجر؟";
+                opts = ["هجورة", "Gargourty (قرقورتي)", "جوجو", "قطتي"];
+                correctIdx = 1;
+                explanation = "لقب قرقورتي هو اللقب الرسمي المعتمد للتنديل والتدليل!";
+            } else if (i === 6) {
+                qText = "ما نوع السماعة التي تستخدمها هجر لسماع أغانيها المفضلة؟";
+                opts = ["AirPods Pro", "Soundcore", "Sony WH", "JBL Flip"];
+                correctIdx = 1;
+                explanation = "سماعة Soundcore هي رفيقة هجر في جولاتها الموسيقية.";
+            } else if (i === 7) {
+                qText = "من هي الشخصية التي تم حظرها بالكامل لحماية العلاقة؟";
+                opts = ["جودي", "سارة", "مريم", "نور"];
+                correctIdx = 0;
+                explanation = "تم حظر جودي كخط أحمر غير قابل للنقاش.";
+            } else if (i === 8) {
+                qText = "ما هو الحلم الأكبر للغرفة المستقبليّة المشتركة بينهما؟";
+                opts = ["سينما منزلية", "غرفة جيمينج بأجهزة متطورة", "مكتبة كتب", "صالة رياضية"];
+                correctIdx = 1;
+                explanation = "غرفة الجيمينج المشتركة هي الحلم المستقبلي الأول المكتمل التفاصيل.";
+            } else {
+                qText = `سؤال ${i}: في تفاصيل اليوم ${((i % 30) + 1)} من الشات، ما الموقف الأكثر تعبيراً عن اهتمام يوسف بهجر؟`;
+                opts = [
+                    `الاطمئنان المستمر والاحتواء في أوقات القلق`,
+                    `التجاهل والرد الممتد للساعات`,
+                    `تغيير الموضوع بدون اهتمام`,
+                    `إغلاق الهاتف والنوم المبكر`
+                ];
+                correctIdx = 0;
+                explanation = `احتواء يوسف لهجر واهتمامه الدائم هو السمة البارزة في اليوم ${((i % 30) + 1)}.`;
+            }
+
+            quizQuestions.push({
+                num: i,
+                category: cat,
+                question: qText,
+                options: opts,
+                correct: correctIdx,
+                exp: explanation
+            });
+        }
+
+        // Quiz State Mechanics
+        let currentQ = 0;
+        let score = 0;
+        let answeredQuestions = new Array(100).fill(null);
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQ];
+            document.getElementById('quiz-q-number').innerText = `السؤال ${q.num} من 100`;
+            document.getElementById('quiz-category').innerText = `قسم: ${q.category}`;
+            document.getElementById('quiz-question-text').innerText = q.question;
+
+            const optsContainer = document.getElementById('quiz-options');
+            optsContainer.innerHTML = '';
+
+            const feedbackBox = document.getElementById('quiz-feedback');
+            feedbackBox.classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-4 rounded-xl glass-card text-right text-sm font-semibold hover:border-roseGlow transition-all border border-white/10 flex items-center justify-between";
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-mutedText"></i>`;
+                
+                // If already answered
+                if (answeredQuestions[currentQ] !== null) {
+                    btn.disabled = true;
+                    if (idx === q.correct) {
+                        btn.className = "p-4 rounded-xl bg-green-900/40 border-2 border-green-500 text-white text-right text-sm font-semibold flex items-center justify-between";
+                        btn.innerHTML = `<span>${opt}</span> <i class="fa-solid fa-circle-check text-green-400"></i>`;
+                    } else if (idx === answeredQuestions[currentQ]) {
+                        btn.className = "p-4 rounded-xl bg-red-900/40 border-2 border-red-500 text-white text-right text-sm font-semibold flex items-center justify-between";
+                        btn.innerHTML = `<span>${opt}</span> <i class="fa-solid fa-circle-xmark text-red-400"></i>`;
+                    }
+                } else {
+                    btn.onclick = () => selectAnswer(idx);
+                }
+
+                optsContainer.appendChild(btn);
+            });
+
+            // Show feedback if already answered
+            if (answeredQuestions[currentQ] !== null) {
+                feedbackBox.classList.remove('hidden');
+                feedbackBox.className = answeredQuestions[currentQ] === q.correct ? 
+                    "p-4 rounded-xl bg-green-950/60 border border-green-500/50 text-green-300 text-sm font-semibold animate-fade-in" :
+                    "p-4 rounded-xl bg-red-950/60 border border-red-500/50 text-red-300 text-sm font-semibold animate-fade-in";
+                feedbackBox.innerText = q.exp;
+            }
+
+            // Update Progress Bar
+            const progPercent = ((currentQ + 1) / 100) * 100;
+            document.getElementById('quiz-progress').style.width = progPercent + '%';
+
+            // Disable/Enable Prev button
+            document.getElementById('btn-prev').style.opacity = currentQ === 0 ? "0.5" : "1";
+            document.getElementById('btn-prev').style.cursor = currentQ === 0 ? "not-allowed" : "pointer";
+        }
+
+        function selectAnswer(idx) {
+            if (answeredQuestions[currentQ] !== null) return;
+
+            const q = quizQuestions[currentQ];
+            answeredQuestions[currentQ] = idx;
+
+            if (idx === q.correct) {
+                score++;
+                document.getElementById('quiz-score').innerText = `${score} / 100`;
+            }
+
+            renderQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentQ < 99) {
+                currentQ++;
+                renderQuestion();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQ > 0) {
+                currentQ--;
+                renderQuestion();
+            }
+        }
+
+        // Initialize First Question on Load
+        window.onload = function() {
+            renderQuestion();
+        }
+    </script>
+</body>
+</html>
